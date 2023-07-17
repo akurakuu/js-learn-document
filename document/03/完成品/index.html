@@ -1,14 +1,15 @@
 <html lang="ja">
     <head>
         <title>
-            jsを学べks | 02: JavaScriptでボタンを押したときの処理を作成する。
+            jsを学べks | 03: JavaScriptで入力した内容を表示する。
         </title>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width,initial-scale=1">
     </head>
     <body>
         <div>
-            ボタンを押した回数:<span id="clickcount">0</span><br>
+            入力した内容: <span id="output"></span><br>
+            <input type="text" id="input" placeholder="ここに入力"><br>
             <button id="button">クリック！</button>
         </div>
         <script>
@@ -16,12 +17,11 @@
             // HTMLは上から順に読み込まれるので、操作したい要素より下に書く
 
             let button = document.getElementById('button');
-            let clickcount = document.getElementById('clickcount');
+            let input = document.getElementById('input');
+            let output = document.getElementById('output');
 
-            let count = 0;
             button.addEventListener('click', function() {
-                count++;
-                clickcount.innerText = count;
+                output.innerText = input.value;
             });
         </script>
     </body>
